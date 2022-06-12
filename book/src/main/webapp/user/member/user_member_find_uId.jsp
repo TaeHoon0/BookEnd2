@@ -8,6 +8,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script defer src="../../js/user_member.js"> </script>
 <link rel='stylesheet' type='text/css' href='../../css/user_member.css'>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 </head>
 <body>
 <div id="findId">
@@ -19,24 +21,29 @@
 		</div>
 		<div class="label_group">
 			<label>이름</label> <br/>
-			<input type="text" name="uName" id="uName" placeholder="이름을 입력해주세요."> <br/>
+			<input type="text" name="uName" class="find_uId_uName" placeholder="이름을 입력해주세요."> <br/>
 			<span id="uNameValidation"></span>
 		</div>
 		<div class="label_group findUidPhone">
 			<label>휴대폰</label> <br/>
-			<input type="text" name="phone" id="phone" placeholder="핸드폰 번호를 입력해주세요."> <br/>
+			<input type="text" name="phone" class="find_uId_phone" placeholder="핸드폰 번호를 입력해주세요."> <br/>
 			<span id="phoneValidation"></span>
 		</div>
 		<div class="label_group findUidEmail">
 			<label>이메일</label> <br/>
-			<input type="text" name="email" id="email" placeholder="이메일을 입력해주세요."> <br/>
+			<input type="text" name="email" class="find_uId_email" placeholder="이메일을 입력해주세요."> <br/>
 			<span id="emailValidation"></span>
 		</div>
 		<div class="btns">
-			<button type="button" id="btnFindId">확인</button> <br/>
-			<button type="button">취소</button>
+			<button type="button" onclick="member.findPhone(this.form)" id="btnFindUid">찾기</button> <br/>
+			<button type="button" onclick="member.moveLogin()">취소</button>
 		</div>
 	</form>
 </div>
 </body>
+<c:if test="${not empty msg }">
+	<script>
+		alert("${msg }");
+	</script>
+</c:if>
 </html>

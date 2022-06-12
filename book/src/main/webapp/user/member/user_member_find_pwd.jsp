@@ -28,7 +28,7 @@
 		</div>
 		<div class="btns">
 			<button type="button" id="btnFindPwd">확인</button> <br/>
-			<button type="button">취소</button>
+			<button type="button" onclick="member.moveLogin()">취소</button>
 		</div>
 	</form>
 </div>
